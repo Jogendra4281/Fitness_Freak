@@ -1,0 +1,24 @@
+body{
+    background-image: url(img/about.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 100vh;
+align-items: center;
+color:;
+font-size: 20px;
+font-weight: 500;
+font-family: 'Poppins',sans-serif;       
+}
+a{
+background-color: #f44336;
+color: white;
+padding: 14px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+.ft{
+background-color: black;
+color:red;
+}

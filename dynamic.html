@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Recommendations</title>
+</head>
+<style>
+    body {
+        background-image: url('background.jpg');
+        background-size: cover;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    section {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 10px 10px #050505;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+        padding: 5px;
+        width: 200px;
+        font-size: 16px;
+        border: none;
+        border-radius: 3px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #recommendation-section {
+        margin-top: 30px;
+        border-radius: 50%;
+        box-shadow: 10px 10px #050505;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>Gym Recommendations</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Enter Your Weight</h2>
+            <form id="weight-form">
+                <label for="weight">Weight:</label>
+                <input type="number" id="weight" name="weight" required><br><br>
+                <button type="submit">Get Recommendations</button><br>
+            </form>
+            <img src="https://img.freepik.com/free-photo/powerful-stylish-bodybuilder-with-tattoo-his-arm-doing-exercises-with-dumbbells-isolated-dark-background_613910-5209.jpg?size=626&ext=jpg">
+            <br><center><a href="main.html"><button type="submit">HOME</button> </a></center>
+        </section>
+
+        <section id="recommendation-section" style="display: none;">
+            <h2>Personalized Recommendations</h2>
+            <p id="diet-recommendation"></p>
+            <p id="workout-recommendation"></p>
+        </section>
+    </main>
+
+    <script>
+        // Sample diet and workout recommendations based on weight
+        const recommendations = [
+            { weight: 60 || 69 , diet: "Include lean proteins, fruits, and vegetables in your diet.", workout: "Exercise for 30 minutes daily." },
+            { weight: 70, diet: "Consume a balanced diet with whole grains, lean proteins, and healthy fats.", workout: "Exercise for 45 minutes daily." },
+            { weight: 80, diet: "Focus on portion control and eat a variety of nutrient-dense foods.", workout: "Exercise for 60 minutes daily." },
+            // Add more recommendations as needed
+        ];
+
+        // Function to handle form submission
+        function handleWeightSubmission(event) {
+            event.preventDefault();
+
+            const weight = parseInt(document.getElementById("weight").value);
+           
+            // Find the recommendation based on weight
+            const recommendation = recommendations.find(item => item.weight === weight);
+
+            if (recommendation) {
+                // Display the recommendations
+                document.getElementById("diet-recommendation").textContent = "Diet Recommendation: " + recommendation.diet;
+                document.getElementById("workout-recommendation").textContent = "Workout Recommendation: " + recommendation.workout;
+
+                document.getElementById("recommendation-section").style.display = "block";
+            } else {
+                // Weight not found in recommendations
+                alert("Weight not found. Please contact our staff for personalized recommendations.");
+            }
+        }
+
+        // Add event listener to the form
+        document.getElementById("weight-form").addEventListener("submit", handleWeightSubmission);
+    </script>
+</body>
+</html>

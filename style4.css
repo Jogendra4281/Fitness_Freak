@@ -1,0 +1,50 @@
+.tb{
+    box-sizing: ;
+    /*border-radius: 1px solid;*/
+    border: 1px solid #000000;
+}
+body{
+    background-image: url(img/shop3.jpg);
+    background-size:cover ;
+    background-repeat: no-repeat;   
+}
+.navi{
+    background-color: red;
+    height: 50px;
+}
+.btn{
+    background-origin: padding: 100px;;
+}
+table, th, td{
+        border: 5px solid pink;
+        border-collapse: collapse;
+}
+th, td{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+}
+th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #000000;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+td{
+    color: #fff;
+    text-transform: uppercase;
+}
+.fig .tb img {
+    height: 150px;
+}
+p{
+    color: #fff;
+    text-transform: uppercase;
+    text-size-adjust: 30px;
+}
+.ft1{
+    color: #d63031;
+}
